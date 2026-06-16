@@ -38,7 +38,6 @@ export function TypographySection() {
           </div>
           <a
             href="https://fonts.google.com/download?family=Inter"
-            target="_blank" rel="noreferrer"
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-grad-3 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
           >
             <Download className="size-4" /> Download Inter Font
@@ -64,7 +63,6 @@ export function TypographySection() {
           </div>
           <a
             href="https://fonts.google.com/download?family=Roboto"
-            target="_blank" rel="noreferrer"
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-grad-1 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
           >
             <Download className="size-4" /> Download Roboto Font

@@ -74,7 +74,6 @@ export function DownloadSection() {
               <a
                 href={getDownloadUrl(it.href)}
                 {...(it.filename ? { download: it.filename } : {})}
-                {...(it.external ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-xs font-semibold hover:bg-primary/90 transition"
               >
                 <Download className="size-3.5" /> {it.cta}
