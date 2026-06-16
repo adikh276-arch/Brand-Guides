@@ -1,5 +1,6 @@
 import { Download } from "lucide-react";
 import { Section } from "@/components/brand/Section";
+import { getDownloadUrl } from "@/lib/utils";
 
 export function DownloadSection() {
   type Item = {
@@ -71,7 +72,7 @@ export function DownloadSection() {
             <div className="mt-auto pt-6 flex items-center justify-between border-t border-border/50">
               <span className="text-xs text-muted-foreground font-mono">{it.meta}</span>
               <a
-                href={it.href}
+                href={getDownloadUrl(it.href)}
                 {...(it.filename ? { download: it.filename } : {})}
                 {...(it.external ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-xs font-semibold hover:bg-primary/90 transition"

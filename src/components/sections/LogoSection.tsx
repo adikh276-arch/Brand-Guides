@@ -1,6 +1,7 @@
 import { Download, X } from "lucide-react";
 const logo = "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582205/mantracare-brand-guides/mantracare-logo.png";
 import { Section } from "@/components/brand/Section";
+import { getDownloadUrl } from "@/lib/utils";
 
 export function LogoSection() {
   return (
@@ -85,7 +86,7 @@ export function LogoSection() {
 
       <div className="mt-10 flex flex-wrap gap-2">
         <a
-          href="https://res.cloudinary.com/dh02ythrk/raw/upload/v1781582200/mantracare-brand-guides/mantracare-logo-pack.zip"
+          href={getDownloadUrl("https://res.cloudinary.com/dh02ythrk/raw/upload/v1781582200/mantracare-brand-guides/mantracare-logo-pack.zip")}
           download="MantraCare-Logo-Pack.zip"
           className="inline-flex items-center gap-2 rounded-full bg-grad-3 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
         >
@@ -98,7 +99,7 @@ export function LogoSection() {
         ].map((f) => (
           <a
             key={f.label}
-            href={f.href}
+            href={getDownloadUrl(f.href)}
             download={f.file}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-bgblue transition"
           >
@@ -113,7 +114,7 @@ export function LogoSection() {
 function LogoTile({ label, className, filename, href = "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582198/mantracare-brand-guides/mantracare-logo-horizontal.png", children }: { label: string; className: string; filename: string; href?: string; children: React.ReactNode }) {
   return (
     <a
-      href={href}
+      href={getDownloadUrl(href)}
       download={filename}
       className={`rounded-3xl border border-border/60 overflow-hidden ${className} group transition-all hover:-translate-y-1 hover:shadow-premium block cursor-pointer`}
     >
