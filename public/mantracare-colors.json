@@ -1,0 +1,22 @@
+{
+  "primary": {
+    "deepNavy": "#020817",
+    "brandBlue": "#043570",
+    "accentBlue": "#00C0FF"
+  },
+  "secondary": {
+    "lightBlue": "#A7CDFF",
+    "softSkyBlue": "#D8F1FF"
+  },
+  "neutral": {
+    "backgroundWhiteBlue": "#F3FAFF",
+    "slateGray": "#64748B",
+    "pureWhite": "#FFFFFF"
+  },
+  "gradients": {
+    "g1": ["#020817", "#043570"],
+    "g2": ["#043570", "#00C0FF"],
+    "g3": ["#D8F1FF", "#A7CDFF"],
+    "g4": ["#020817", "#00C0FF"]
+  }
+}

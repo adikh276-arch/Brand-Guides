@@ -1,0 +1,154 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-navy: var(--navy);
+  --color-deep: var(--deep);
+  --color-corporate: var(--corporate);
+  --color-action: var(--action);
+  --color-lightblue: var(--lightblue);
+  --color-softblue: var(--softblue);
+  --color-bgblue: var(--bgblue);
+  --color-success: var(--success);
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans: "Roboto", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1.25rem;
+  /* MantraCare premium navy palette */
+  /* Official MantraCare palette (HEX → OKLCH) */
+  --background: #F3FAFF;                /* Background White Blue */
+  --foreground: #020817;                /* Deep Navy */
+  --card: #FFFFFF;
+  --card-foreground: #020817;
+  --popover: #FFFFFF;
+  --popover-foreground: #020817;
+  --primary: #043570;                   /* Brand Blue */
+  --primary-foreground: #FFFFFF;
+  --secondary: #D8F1FF;                 /* Soft Sky Blue */
+  --secondary-foreground: #043570;
+  --muted: #F3FAFF;
+  --muted-foreground: #64748B;          /* Slate Gray */
+  --accent: #D8F1FF;
+  --accent-foreground: #043570;
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: #FFFFFF;
+  --border: #D8F1FF;
+  --input: #D8F1FF;
+  --ring: #00C0FF;                      /* Accent Blue */
+  --navy: #020817;                      /* Deep Navy (headings) */
+  --deep: #020817;
+  --corporate: #043570;
+  --action: #00C0FF;                    /* Accent Blue */
+  --lightblue: #A7CDFF;                 /* Light Blue */
+  --softblue: #D8F1FF;                  /* Soft Sky Blue */
+  --bgblue: #F3FAFF;                    /* Background */
+  --success: oklch(0.72 0.18 145);
+  --chart-1: #020817;
+  --chart-2: #043570;
+  --chart-3: #00C0FF;
+  --chart-4: #A7CDFF;
+  --chart-5: #D8F1FF;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #043570;
+  --sidebar-primary: #043570;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F3FAFF;
+  --sidebar-accent-foreground: #043570;
+  --sidebar-border: #D8F1FF;
+  --sidebar-ring: #00C0FF;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--navy);
+  }
+}
+
+@layer utilities {
+  .bg-mantra-gradient {
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(216, 241, 255, 0.7), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(167, 205, 255, 0.55), transparent 60%),
+      radial-gradient(700px 400px at 50% 100%, rgba(0, 192, 255, 0.18), transparent 60%);
+  }
+  .bg-grad-1 { background-image: linear-gradient(135deg, #020817, #043570); }
+  .bg-grad-2 { background-image: linear-gradient(135deg, #043570, #00C0FF); }
+  .bg-grad-3 { background-image: linear-gradient(135deg, #020817, #00C0FF); }
+  .bg-grad-4 { background-image: linear-gradient(135deg, #D8F1FF, #A7CDFF); }
+  .glass {
+    background: color-mix(in oklab, var(--card) 72%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  }
+  .text-gradient {
+    background: linear-gradient(120deg, #043570, #00C0FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-soft {
+    box-shadow:
+      0 1px 0 0 color-mix(in oklab, var(--border) 60%, transparent) inset,
+      0 30px 60px -25px rgba(2, 8, 23, 0.25);
+  }
+  .shadow-premium {
+    box-shadow: 0 20px 50px -20px rgba(4, 53, 112, 0.25);
+  }
+}
