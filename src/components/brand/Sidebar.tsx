@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import logo from "@/assets/mantracare-logo.png";
+const logo = "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582205/mantracare-brand-guides/mantracare-logo.png";
 import {
   Sparkles, Compass, Hexagon, Palette, Type, Camera, Shapes, Download,
 } from "lucide-react";

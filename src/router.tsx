@@ -6,6 +6,7 @@ export const getRouter = () => {
   const queryClient = new QueryClient();
 
   const router = createRouter({
+    basepath: "/Brand_Guides",
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
