@@ -29,4 +29,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: bunker.mantracare.com/lovable/Brand_Guides:1.0
+          tags: bunker.mantracare.com/lovable/brand_guides:1.0
