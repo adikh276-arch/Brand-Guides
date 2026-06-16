@@ -14,7 +14,7 @@ export function DownloadSection() {
       meta: "ZIP · 6 files · ~150 KB",
       type: ".ZIP",
       cta: "Download Logo Pack",
-      href: "https://res.cloudinary.com/dh02ythrk/raw/upload/v1781582200/mantracare-brand-guides/mantracare-logo-pack.zip",
+      href: `${import.meta.env.BASE_URL}mantracare-logo-pack.zip`,
       filename: "MantraCare-Logo-Pack.zip",
       tone: "bg-grad-3",
     },

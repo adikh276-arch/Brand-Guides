@@ -86,7 +86,7 @@ export function LogoSection() {
 
       <div className="mt-10 flex flex-wrap gap-2">
         <a
-          href={getDownloadUrl("https://res.cloudinary.com/dh02ythrk/raw/upload/v1781582200/mantracare-brand-guides/mantracare-logo-pack.zip")}
+          href={`${import.meta.env.BASE_URL}mantracare-logo-pack.zip`}
           download="MantraCare-Logo-Pack.zip"
           className="inline-flex items-center gap-2 rounded-full bg-grad-3 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
         >
@@ -95,7 +95,7 @@ export function LogoSection() {
         {[
           { label: "PNG Assets", href: "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582198/mantracare-brand-guides/mantracare-logo-horizontal.png", file: "MantraCare-Horizontal.png" },
           { label: "Transparent PNG", href: "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582199/mantracare-brand-guides/mantracare-logo-mark.png", file: "MantraCare-Mark.png" },
-          { label: "SVG Assets", href: "https://res.cloudinary.com/dh02ythrk/raw/upload/v1781582200/mantracare-brand-guides/mantracare-logo-pack.zip", file: "MantraCare-Logo-Pack.zip" },
+          { label: "SVG Assets", href: `${import.meta.env.BASE_URL}mantracare-logo-pack.zip`, file: "MantraCare-Logo-Pack.zip" },
         ].map((f) => (
           <a
             key={f.label}
