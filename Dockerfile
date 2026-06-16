@@ -8,9 +8,7 @@ RUN npm run build
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
-# Copy the static files from the builder stage
-# Note: TanStack Start places the client assets in dist/client
-COPY --from=builder /app/dist/client /usr/share/nginx/html/Brand_Guides
+COPY --from=builder /app/dist /usr/share/nginx/html/brand_guides
 # Remove default nginx config
 RUN rm /etc/nginx/conf.d/default.conf
 COPY vite-nginx.conf /etc/nginx/conf.d/nginx.conf

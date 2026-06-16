@@ -1,14 +1,10 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -68,59 +64,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MantraCare Brand Hub" },
-      { name: "description", content: "The MantraCare Brand Hub is a premium, interactive website showcasing brand guidelines for accessible healthcare and wellbeing." },
-      { property: "og:title", content: "MantraCare Brand Hub" },
-      { property: "og:description", content: "The MantraCare Brand Hub is a premium, interactive website showcasing brand guidelines for accessible healthcare and wellbeing." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "theme-color", content: "#2563EB" },
-    ],
-    links: [
-      { rel: "icon", type: "image/png", href: "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582196/mantracare-brand-guides/favicon.png" },
-      { rel: "apple-touch-icon", href: "https://res.cloudinary.com/dh02ythrk/image/upload/v1781582196/mantracare-brand-guides/favicon.png" },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Outlet />
-    </QueryClientProvider>
+    </>
   );
 }
