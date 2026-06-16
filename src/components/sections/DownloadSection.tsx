@@ -24,8 +24,8 @@ export function DownloadSection() {
       meta: "Google Fonts · TTF",
       type: "FONT",
       cta: "Download Inter",
-      href: "https://fonts.google.com/download?family=Inter",
-      external: true,
+      href: `${import.meta.env.BASE_URL}Inter-Font.zip`,
+      filename: "Inter-Font.zip",
       tone: "bg-grad-1",
     },
     {
@@ -34,8 +34,8 @@ export function DownloadSection() {
       meta: "Google Fonts · TTF",
       type: "FONT",
       cta: "Download Roboto",
-      href: "https://fonts.google.com/download?family=Roboto",
-      external: true,
+      href: `${import.meta.env.BASE_URL}Roboto-Font.zip`,
+      filename: "Roboto-Font.zip",
       tone: "bg-grad-2",
     },
     {

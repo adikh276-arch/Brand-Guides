@@ -1,32 +1,42 @@
 import { Download } from "lucide-react";
-import { Section } from "@/components/brand/Section";
 
 export function TypographySection() {
-  const inter = '"Inter", system-ui, sans-serif';
-  const roboto = '"Roboto", system-ui, sans-serif';
   const scale = [
-    { name: "H1", className: "text-6xl font-bold tracking-tight", size: "60 / 68", family: inter, label: "Inter" },
-    { name: "H2", className: "text-4xl font-bold tracking-tight", size: "40 / 48", family: inter, label: "Inter" },
-    { name: "H3", className: "text-2xl font-semibold tracking-tight", size: "24 / 32", family: inter, label: "Inter" },
-    { name: "Body", className: "text-base leading-relaxed", size: "16 / 26", family: roboto, label: "Roboto", body: true },
-    { name: "Caption", className: "text-xs uppercase tracking-[0.18em] text-muted-foreground", size: "12 / 16", family: roboto, label: "Roboto", body: true },
+    { name: "Display Large", size: "72px", lh: "72px", tracking: "-2%", w: "800", font: "Inter" },
+    { name: "Display Medium", size: "60px", lh: "60px", tracking: "-2%", w: "700", font: "Inter" },
+    { name: "Display Small", size: "48px", lh: "48px", tracking: "-2%", w: "700", font: "Inter" },
+    { name: "Heading 1", size: "36px", lh: "40px", tracking: "-1%", w: "600", font: "Inter" },
+    { name: "Heading 2", size: "30px", lh: "36px", tracking: "-1%", w: "600", font: "Inter" },
+    { name: "Heading 3", size: "24px", lh: "32px", tracking: "-1%", w: "600", font: "Inter" },
+    { name: "Body Large", size: "18px", lh: "28px", tracking: "0%", w: "400", font: "Roboto" },
+    { name: "Body Base", size: "16px", lh: "24px", tracking: "0%", w: "400", font: "Roboto" },
+    { name: "Body Small", size: "14px", lh: "20px", tracking: "0%", w: "400", font: "Roboto" },
+    { name: "Caption", size: "12px", lh: "16px", tracking: "0%", w: "500", font: "Roboto" },
   ];
+
+  const inter = "'Inter', sans-serif";
+  const roboto = "'Roboto', sans-serif";
+
   return (
-    <Section
-      id="type" eyebrow="05 · Typography"
-      title="A clear voice, built on two trusted typefaces."
-      description="Inter powers headings, navigation and buttons with modern confidence. Roboto delivers calm, highly-legible body copy across every surface."
-    >
-      <div className="grid lg:grid-cols-2 gap-5">
+    <div id="typography" className="scroll-mt-32">
+      <div className="mb-10">
+        <div className="text-xs font-medium uppercase tracking-[0.18em] text-action mb-3">04 · Typography</div>
+        <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-primary">Words that comfort.</h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+          Our typography system is built on Inter for structural headings and Roboto for highly readable supporting text. Both are available via Google Fonts.
+        </p>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-6">
         <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-bgblue to-white p-10 flex flex-col">
           <div className="flex items-center justify-between">
-            <div className="text-xs uppercase tracking-[0.18em] text-action">Display · Headings</div>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">Primary</span>
+            <div className="text-xs uppercase tracking-[0.18em] text-action">Headings · Display</div>
+            <span className="rounded-full bg-action/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-action">Primary</span>
           </div>
-          <div className="text-[10rem] font-bold mt-4 leading-none tracking-tight text-primary" style={{ fontFamily: inter }}>Aa</div>
+          <div className="text-[10rem] mt-4 leading-none tracking-tight text-primary" style={{ fontFamily: inter, fontWeight: 700 }}>Aa</div>
           <div className="mt-8 text-3xl font-bold text-primary" style={{ fontFamily: inter }}>Inter</div>
-          <p className="mt-2 text-sm text-muted-foreground" style={{ fontFamily: roboto }}>
-            Used for hero headings, section titles, navigation and buttons.
+          <p className="mt-2 text-sm text-muted-foreground" style={{ fontFamily: inter }}>
+            Used exclusively for titles, headings, and large display statements.
           </p>
           <div className="mt-6 text-base text-foreground/80 leading-relaxed font-mono break-words">
             ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz · 0123456789
@@ -37,7 +47,8 @@ export function TypographySection() {
             ))}
           </div>
           <a
-            href="https://fonts.google.com/download?family=Inter"
+            href={`${import.meta.env.BASE_URL}Inter-Font.zip`}
+            download="Inter-Font.zip"
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-grad-3 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
           >
             <Download className="size-4" /> Download Inter Font
@@ -62,7 +73,8 @@ export function TypographySection() {
             ))}
           </div>
           <a
-            href="https://fonts.google.com/download?family=Roboto"
+            href={`${import.meta.env.BASE_URL}Roboto-Font.zip`}
+            download="Roboto-Font.zip"
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-grad-1 text-white px-5 py-2.5 text-sm font-semibold hover:opacity-95 transition shadow-premium"
           >
             <Download className="size-4" /> Download Roboto Font
@@ -77,13 +89,24 @@ export function TypographySection() {
               <div className="text-xs font-medium uppercase tracking-wider text-action">{s.name}</div>
               <div className="font-mono text-xs text-muted-foreground mt-1">{s.size}</div>
             </div>
-            <div className={s.className} style={{ fontFamily: s.family }}>
-              {s.body ? "Care that meets you where you are — clinical, human, and always within reach." : "Healthier lives, by design."}
+            <div 
+              className="text-primary truncate" 
+              style={{ 
+                fontFamily: s.font === "Inter" ? inter : roboto, 
+                fontSize: s.size, 
+                lineHeight: s.lh, 
+                letterSpacing: s.tracking,
+                fontWeight: Number(s.w) 
+              }}
+            >
+              The quick brown fox jumps over the lazy dog
             </div>
-            <div className="hidden md:block text-xs text-muted-foreground font-mono">{s.label}</div>
+            <div className="hidden sm:block text-right font-mono text-xs text-muted-foreground">
+              {s.font} {s.w} <span className="opacity-40 ml-2">LH {s.lh}</span>
+            </div>
           </div>
         ))}
       </div>
-    </Section>
+    </div>
   );
 }
