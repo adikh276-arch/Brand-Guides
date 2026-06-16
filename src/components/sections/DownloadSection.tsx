@@ -44,7 +44,7 @@ export function DownloadSection() {
       meta: "JSON · HEX & RGB",
       type: ".JSON",
       cta: "Download Palette",
-      href: "/mantracare-colors.json",
+      href: `${import.meta.env.BASE_URL}mantracare-colors.json`,
       filename: "mantracare-colors.json",
       tone: "bg-grad-3",
     },
